@@ -1,0 +1,22 @@
+{
+  "name": "bibliocracy",
+  "version": "1.0.0",
+  "description": "A website for book lovers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dKenez/Bibliocracy.git"
+  },
+  "author": "dKenez",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/dKenez/Bibliocracy/issues"
+  },
+  "homepage": "https://github.com/dKenez/Bibliocracy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

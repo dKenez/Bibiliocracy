@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Welcome to Bibliocracy!</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+  </head>
+
+  <body>
+    <!--<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0b3948;"> dark mode-->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #68A891;">
+      <a class="navbar-brand" href="index.html">Bblcrcy</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              i6i283
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Kilépés</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">|</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="bibliocrat.html" tabindex="-1" aria-disabled="true">könyvtáram: 150 könyv</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Felfedezés" aria-label="Felfedezés">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">mehet!</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Felfedezés</h1>
+      <p class="lead">Mindig a legutolsó helyen találsz meg mindent, amit keresel.</p>
+      <p class="lead">-i6i283</p>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <aside class="col-3">
+          <div class="card">
+          	<article class="card-group-item">
+          		<header class="card-header d-flex justify-content-center" style="background-color: #68A891;">
+          			<h6 class="title text-light">Keresés</h6>
+          		</header>
+            </article> <!-- card-group-item.// -->
+
+            <article class="card-group-item">
+              <div class="filter-content">
+                <div class="card-body">
+                  <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <input class="form-control mr-sm-2" type="search" id="title" placeholder="Cím" aria-label="Search">
+                  </div>
+                  </div>
+                  <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <input class="form-control mr-sm-2" type="search" id="author" placeholder="Szerző" aria-label="Search">
+                  </div>
+                  </div>
+                  <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <input class="form-control mr-sm-2" type="search" id="ISBN" placeholder="ISBN" aria-label="Search">
+                  </div>
+                  </div>
+
+                <div class="form-row">
+                  <div class="col-md-6">
+                  <label>Átlag életkor:</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Min</label>
+                  <input type="number" class="form-control" id="age_min" placeholder="0">
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Max</label>
+                  <input type="number" class="form-control" id="age_max" placeholder=&infin;>
+                </div>
+                </div>
+                </div> <!-- card-body.// -->
+              </div>
+            </article> <!-- card-group-item.// -->
+
+            <article class="card-group-item">
+              <footer class="card-footer d-flex justify-content-center" style="background-color: #68A891;">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">mehet!</button>
+              </footer>
+            </article> <!-- card-group-item.// -->
+
+          </div>
+        </aside>
+
+        <div class="col-9">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Cím</th>
+                <th scope="col">Szerző</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Átlag életkor</th>
+                <th scope="col">Bib score</th>
+                <th scope="col">Kedvenced</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a type="button" href="bib.html" class="btn btn-outline-secondary">Túz és jég dala</a></td>
+                <td>G.R.R. Martin</td>
+                <td>14225</td>
+                <td>29</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a type="button" href="bib.html" class="btn btn-outline-secondary">Harry Potter</a></td>
+                <td>J.K. Rowling</td>
+                <td>14426</td>
+                <td>23</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a type="button" href="bib.html" class="btn btn-outline-secondary">Silmarillion</a></td>
+                <td>J.R.R. Tolkien</td>
+                <td>14427</td>
+                <td>35</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <article class="card-group-item">
+            <footer class="card-footer d-flex justify-content-center" style="background-color: #68A891;">
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Nem találtad amit kerestél? Hozz létre újat!</button>
+            </footer>
+          </article> <!-- card-group-item.// -->
+
+      </div>
+    </div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
