@@ -1,0 +1,85 @@
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4"><%= bib.title %></h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <aside class="col-4">
+      <div class="card">
+      	<article class="card-group-item">
+      		<header class="card-header d-flex justify-content-center" style="background-color: #68A891;">
+      			<h6 class="title text-light"><%= bib.title %></h6>
+      		</header>
+        </article> <!-- card-group-item.// -->
+
+        <article class="card-group-item">
+          <img src="" alt="Ide még jön egy kép, csak még nem sikerült megjeleníteni" class="rounded mx-auto d-block">
+          <div class="col-md-12">
+            <div class="dropdown-divider"></div>
+            <h6>Szerző: <%= bib.author %></h6>
+          </div>
+          <div class="col-md-12">
+            <div class="dropdown-divider"></div>
+            <h6>ISBN: <%= bib.ISBN %></h6>
+          </div>
+          <div class="col-md-12">
+            <div class="dropdown-divider"></div>
+            <h6>Olvasók átlag életkora: <%= bib.age %></h6>
+          </div>
+          <div class="col-md-12">
+            <div class="dropdown-divider"></div>
+            <h6>bib score: <%= bib.bib_score %></h6>
+          </div>
+          <div class="col-md-12">
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-divider"></div>
+            <h6>Értékelés placeholder</h6>
+          </div>
+        </article> <!-- card-group-item.// -->
+        <article class="card-group-item">
+          <footer class="card-footer d-flex justify-content-center" style="background-color: #68A891;">
+            <% if (typeof user !== 'undefined') { %>
+              <% if (typeof addError === 'undefined') { %>
+              <form method="POST">
+                <input class="btn btn-outline-light my-2 my-sm-0" id="addBib" name="addBib" type="submit" value="Add hozzá a könyvtáradhoz!"/>
+              </form>
+              <% } else if (typeof addError !== 'undefined') { %>
+                <div class="alert alert-danger"><%= addError %></div>
+              <% } %>
+            <% } %>
+          </footer>
+        </article> <!-- card-group-item.// -->
+      </div>
+
+      <!-- <div class="card">
+      	<article class="card-group-item">
+      		<header class="card-header d-flex justify-content-center" style="background-color: #68A891;">
+      			<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Add hozzá a könyvtáradhoz!</button>
+      		</header>
+        </article>
+
+        <article class="card-group-item" style="margin: auto;">
+          <div class="col-md-12">
+            <h6>Értékelés placeholder</h6>
+          </div>
+        </article>
+
+      </div> -->
+    </aside>
+
+    <aside class="col-8">
+      <article class="card-group-item">
+      <p class="lead text-justify">
+        <%= bib.blurb %>
+      </p>
+
+      </article> <!-- card-group-item.// -->
+    </aside>
+
+  </div>
+</div>
+
+<%- include('footer') -%>

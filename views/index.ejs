@@ -1,0 +1,124 @@
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Felfedezés</h1>
+  <p class="lead">Mindig a legutolsó helyen találsz meg mindent, amit keresel.</p>
+  <p class="lead">-i6i283</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <aside class="col-3">
+      <div class="card">
+      	<article class="card-group-item">
+      		<header class="card-header d-flex justify-content-center" style="background-color: #68A891;">
+      			<h6 class="title text-light">Keresés</h6>
+      		</header>
+        </article> <!-- card-group-item.// -->
+
+        <article class="card-group-item">
+          <div class="filter-content">
+            <div class="card-body">
+              <div class="form-row">
+              <div class="form-group col-md-12">
+                <input class="form-control mr-sm-2" type="search" id="title" placeholder="Cím" aria-label="Search">
+              </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-12">
+                <input class="form-control mr-sm-2" type="search" id="author" placeholder="Szerző" aria-label="Search">
+              </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-12">
+                <input class="form-control mr-sm-2" type="search" id="ISBN" placeholder="ISBN" aria-label="Search">
+              </div>
+              </div>
+
+            <div class="form-row">
+              <div class="col-md-6">
+              <label>Átlag életkor:</label>
+              </div>
+            </div>
+            <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Min</label>
+              <input type="number" class="form-control" id="age_min" placeholder="0">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Max</label>
+              <input type="number" class="form-control" id="age_max" placeholder=&infin;>
+            </div>
+            </div>
+            </div> <!-- card-body.// -->
+          </div>
+        </article> <!-- card-group-item.// -->
+
+        <article class="card-group-item">
+          <footer class="card-footer d-flex justify-content-center" style="background-color: #68A891;">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">mehet!</button>
+          </footer>
+        </article> <!-- card-group-item.// -->
+
+      </div>
+    </aside>
+
+    <div class="col-9">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Cím</th>
+            <th scope="col">Szerző</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Átlag életkor</th>
+            <th scope="col">Bib score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% bibs.forEach(function(oneBib){ %>
+            <tr>
+              <td><a type="button" href="/bib/<%= oneBib._id %>" class="btn btn-outline-secondary"><%= oneBib.title %></a></td>
+              <td><%= oneBib.author%></td>
+              <td><%= oneBib.ISBN%></td>
+              <td><%= oneBib.average_age%></td>
+              <td><%= oneBib.bib_score%></td>
+            </tr>
+          <% }); %>
+          <!-- <tr>
+            <td><a type="button" href="bib.html" class="btn btn-outline-secondary">Túz és jég dala</a></td>
+            <td>G.R.R. Martin</td>
+            <td>14225</td>
+            <td>29</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a type="button" href="bib.html" class="btn btn-outline-secondary">Harry Potter</a></td>
+            <td>J.K. Rowling</td>
+            <td>14426</td>
+            <td>23</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a type="button" href="bib.html" class="btn btn-outline-secondary">Silmarillion</a></td>
+            <td>J.R.R. Tolkien</td>
+            <td>14427</td>
+            <td>35</td>
+            <td></td>
+            <td></td>
+          </tr> -->
+        </tbody>
+      </table>
+
+      <article class="card-group-item">
+        <footer class="card-footer d-flex justify-content-center" style="background-color: #68A891;">
+          <a class="btn btn-outline-light my-2 my-sm-0" href="/bib/new" type="submit">Nem találtad amit kerestél? Hozz létre újat!</a>
+        </footer>
+      </article> <!-- card-group-item.// -->
+
+  </div>
+</div>
+
+<%- include('footer') -%>

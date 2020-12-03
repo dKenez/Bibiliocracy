@@ -1,0 +1,64 @@
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Könyv létrehozása</h1>
+</div>
+
+<form class="container" method="POST">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+      	<article class="card-group-item">
+      		<header class="card-header d-flex justify-content-center" style="background-color: #68A891;">
+      		</header>
+        </article> <!-- card-group-item.// -->
+
+        <article class="card-group-item">
+          <div class="filter-content">
+            <div class="card-body">
+              <div class="form-row">
+              <div class="form-group col-md-12">
+                <input class="form-control mr-sm-2" type="text" id="title" name="title" placeholder="Cím" aria-label="Search">
+              </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-2">
+                <input class="form-control mr-sm-2" type="text" id="author" name="author" placeholder="Szerző" aria-label="Search">
+              </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-12">
+                <input class="form-control mr-sm-2" type="text" id="ISBN" name="ISBN" placeholder="ISBN" aria-label="Search">
+              </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-12">
+                <textarea class="form-control mr-sm-2" type="text" id="blurb" name="blurb" placeholder="Leírás" aria-label="textarea"></textarea>
+              </div>
+              </div>
+              <!-- <input type="file" name="cover"/> -->
+
+            </div> <!-- card-body.// -->
+          </div>
+        </article> <!-- card-group-item.// -->
+
+        <article class="card-group-item">
+          <footer class="card-footer d-flex justify-content-center col-12" style="background-color: #68A891;">
+            <div class="row col-12">
+            <div class="col-6">
+              <input class="btn btn-light my-2 my-sm-0 col-10" id="createBib" name="createBib" type="submit" value="Könyv létrehozása">
+            </div>
+            <div class="col-6">
+              <a class="btn btn-outline-danger my-2 my-sm-0 col-10" href="/" type="submit"> Mégsem </a>
+            </div>
+            </div>
+          </footer>
+        </article> <!-- card-group-item.// -->
+
+      </div>
+    </div>
+  </div>
+</form>
+
+<%- include('footer') -%>

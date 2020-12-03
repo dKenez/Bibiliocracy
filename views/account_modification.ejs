@@ -1,0 +1,80 @@
+<%- include('header') -%>
+<%- include('navbar') -%>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Adat módosítás</h1>
+</div>
+
+<form class="container" method="POST">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+      	<article class="card-group-item">
+      		<header class="card-header d-flex justify-content-center" style="background-color: #68A891;">
+      		</header>
+        </article> <!-- card-group-item.// -->
+
+        <article class="card-group-item">
+          <div class="filter-content">
+            <div class="card-body" >
+              <!-- <input type="hidden" id="id" name="id" value=' bibliocrat.id'> -->
+
+              <% if (typeof user.username === 'undefined') { %>
+              <div class="form-row">
+              <div class="form-group col-md-12">
+                <input class="form-control mr-sm-2" type="text" id="username" name="username" placeholder="Felhasználónév" aria-label="Search"/>
+              </div>
+              </div>
+              <% } %>
+
+
+              <div class="form-row">
+              <div class="form-group col-md-12">
+                <input class="form-control mr-sm-2" type="text" id="motto" name="motto" placeholder="Mottó" aria-label="Search"
+                value='<%= bibliocrat.motto %>'/>
+              </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-2">
+                <input class="form-control mr-sm-2" type="number" id="age" name="age" placeholder="Életkor" aria-label="Search"
+                value='<%= bibliocrat.age %>'/>
+              </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-12">
+                <input class="form-control mr-sm-2" type="text" id="gender" name="gender" placeholder="Nem" aria-label="Search"
+                value='<%= bibliocrat.gender %>'/>
+              </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-12">
+                <textarea class="form-control mr-sm-2" type="text" id="story" name="story" placeholder="Meséld el történeted" aria-label="textarea"><%= bibliocrat.story %></textarea>
+              </div>
+              </div>
+              <% if (typeof changeError !== 'undefined') { %>
+                <div class="alert alert-danger"><%= changeError %></div>
+              <% } %>
+
+            </div> <!-- card-body.// -->
+          </div>
+        </article> <!-- card-group-item.// -->
+
+        <article class="card-group-item">
+          <footer class="card-footer d-flex justify-content-center col-12" style="background-color: #68A891;">
+            <div class="row col-12">
+            <div class="col-6">
+              <input class="btn btn-light my-2 my-sm-0 col-10" id="saveProfile" name="saveProfile" type="submit" value="Mentés"/>
+            </div>
+            <div class="col-6">
+              <input class="btn btn-danger my-2 my-sm-0 col-10" id="delProfile" name="delProfile" type="submit" value="Profil törlése"/>
+            </div>
+            </div>
+          </footer>
+        </article> <!-- card-group-item.// -->
+
+      </div>
+    </div>
+  </div>
+</form>
+
+<%- include('footer') -%>

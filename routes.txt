@@ -1,0 +1,102 @@
+﻿html fájlok
+- index.html - könyvkereső, könyv létrehozás, könyv hozáadása könyvtárhoz
+- bibliocrat.html - felhasználó könyvtára, könyvtárból törlés
+- bib.html - könyvtárhoz hozzáadás/törlés
+- bib_genesis.html - könyv módosítása(edit + save)
+- login.html - felhasználó létrehozás(edit + save), felhasználó login
+- account_modification.html - felhasználó adatok edit + save + delete + cancel
+
+Routing
+
+middlewares/render/
+  renderMW.js
+
+middlewares/auth/
+  handleWrongPassMW.js
+  checkPassMW.js
+  authMW.js
+
+middlewares/reg/
+  getUserByEmailMW.js
+  checkUserCredentialsMW.js
+  sendPwMW.js
+  regUserMW.js
+
+middlewares/bibliocrat/ // teljes CRUD funkcionalitás megvalósul a usernél
+  saveBibliocratMW.js  // create és update
+  getBibliocratMW.js  // read
+  delBibliocratMw.js    // delete
+
+middlewares/bib/ // bib törlésre nincs lehetőség, ez a griefing megelőzése miatt van
+  getTopBibsMW.js  // top bibs
+  getBibsMW.js    // read bibliocrat bibs
+  getBibMW.js    // read
+  saveBibMW.js  // create és update
+
+
+
+------------------------
+
+GET  /                 				 // index.html
+  getTopBibsMW
+  renderMW(index.html - +2 link)
+
+GET  /?hiba=loginerror                  // index.html
+  getTopBibsMW
+  renderMW(index.html - +2 link)
+
+GET, POST /login                         // jelszó ellenőrzés, ha ok, bibliocratára redirect, vissza a főoldalra
+  getUserByEmailMW
+  checkUserCredentialsMW(...)
+  renderMW(login.html - elfelejtett jelszo gomb)
+
+GET, POST /sendmepassword                      // jelszó reset
+  getUserByEmailMW
+  sendPwMW                               // console.log(emailt kuldtem, ez a jelszo)
+  renderMW(login.html - elfelejtett jelszo gomb)
+
+GET, POST /reg                     //jelszó ellenőrzés, ha ok, bibliocratára redirect, vissza a főoldalra
+  regUserMW
+  renderMW(login.html - elfelejtett jelszo gomb)
+
+GET  /bibliocrat                      // bibliocrat.html
+  authMW
+  getBibliocratMW
+  getBibsMW
+  renderMW(bibliocrat.html)
+
+GET, POST  /bibliocrat/new                  // login.html (new)
+  authMW
+  saveBibliocratMW
+  renderMW(login.html)
+    - ha volt valami érték beküldve ->form elemek azzal töltődjenek fel
+    - ha nem, akkor nem
+
+GET, POST  /bibliocrat/edit/:bibliocrat     // account_modification.html (edit)
+  authMW
+  getBibliocratMW (paraméterből)
+  saveBibliocratMW
+  renderMW(account_modification.html)
+    - ha volt valami érték beküldve ->form elemek azzal töltődjenek fel
+    - ha nem, akkor nem
+
+GET  /bibliocrat/del/:bibliocrat
+  authMW
+  getBibliocratMw
+  delBibliocratMw
+
+GET  /bib/:bibid            // bib.html
+  authMW
+  getBibMW
+  renderMW(bib.html)
+
+GET  /bib/edit/:bibid            // bib_genesis.html
+  authMW
+  getBibMW
+  saveBibMW
+  renderMW(bib_genesis.html)
+
+GET  /bib/new            // bib_genesis.html
+  authMW
+  saveBibMW
+  renderMW(bib_genesis.html)
